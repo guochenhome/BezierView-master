@@ -11,7 +11,7 @@
 	}
 
 	dependencies {
-	        compile 'com.github.guochenhome:BezierView-master:1.4.1'
+	        compile 'com.github.guochenhome:BezierView-master:1.4.5'
 	}
 
 ```
