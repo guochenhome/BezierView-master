@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
+import com.eyoung.move.bezierview.ShopView.GoodsView;
 import com.lcw.view.R;
 
 public class ShoppingCartActivity extends AppCompatActivity {
