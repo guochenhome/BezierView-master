@@ -52,6 +52,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
                 //生成商品View
                 GoodsView goodsView = new GoodsView(ShoppingCartActivity.this);
+                goodsView.setmRadius(10);
                 goodsView.setCircleStartPoint(goodsPoint[0], goodsPoint[1]);
                 goodsView.setCircleEndPoint(shoppingCartPoint[0] + mShoppingCartWidth / 2, shoppingCartPoint[1]);
                 //添加View并执行动画

@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import com.eyoung.move.bezierview.OSUtil;
+
 /**
  * 商品动画自定义View
  * Create by: chenwei.li
@@ -33,23 +35,42 @@ public class GoodsView extends View {
     //小红点的移动坐标
     Point mCircleMovePoint = new Point();
     //小红点半径
-    private int mRadius = 20;
+    private int mRadius = 5;
     //小红点画笔
     private Paint mCirclePaint;
 
+    private Context context;
+
+    /**
+     * 设置 红点的半径
+     *
+     * 不考虑机型适配问题，本方法自动根据屏幕分辨率 由px转dp
+     * @param mRadius
+     */
+    public void setmRadius(int mRadius) {
+        this.mRadius = mRadius;
+    }
+
+    public int getmRadius() {
+        return OSUtil.dip2px(this.context,mRadius);
+    }
+
     public GoodsView(Context context) {
         super(context);
+        this.context=context;
         init(context);
     }
 
 
     public GoodsView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context=context;
         init(context);
     }
 
     public GoodsView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        this.context=context;
         init(context);
     }
 
@@ -74,7 +95,7 @@ public class GoodsView extends View {
      * 商品加入购物车的小红点
      */
     private void drawCircle(Canvas canvas) {
-        canvas.drawCircle(mCircleMovePoint.x, mCircleMovePoint.y, mRadius, mCirclePaint);
+        canvas.drawCircle(mCircleMovePoint.x, mCircleMovePoint.y, getmRadius(), mCirclePaint);
     }
 
     /**
